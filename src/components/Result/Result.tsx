@@ -1,6 +1,5 @@
 import { Difficulty } from '@/model/enums/difficulty';
 import { GameResult } from '@/model/gameResult';
-import { DifficultySelector } from '@/components/DifficultySelector';
 import { resultText } from '@/components/Result/Result.css';
 
 interface ResultProps {
@@ -28,7 +27,6 @@ export const Result = ({ onNewGame, result }: ResultProps) => {
       <h2 className={resultText}>
         {textToDisplay} You finished in {result.moves} moves :)
       </h2>
-      <DifficultySelector onDifficultyChosen={onNewGame} />
     </>
   );
 };
