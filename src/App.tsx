@@ -42,7 +42,7 @@ export const App = ({ targetTime }: appProps) => {
     dat = Date.now() + 80000
   }, []);
 
-  if (!isScreenLargeEnough) {
+  if (false) {
     return (
       <main className={mainContainer}>
         <h1 className={screenDisclaimer}>
