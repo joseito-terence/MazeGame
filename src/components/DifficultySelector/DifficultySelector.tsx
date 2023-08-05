@@ -4,16 +4,20 @@ import { buttonsContainer } from '@/components/DifficultySelector/DifficultySele
 
 interface DifficultySelectorProps {
   onDifficultyChosen: (gameDifficulty: Difficulty) => void;
+  lost: Boolean;
+  win: Boolean;
+  im: string;
 }
 
 export const DifficultySelector = ({
   onDifficultyChosen,
+  lost,
+  win,
+  im
 }: DifficultySelectorProps) => (
   <div className={buttonsContainer}>
-    <Button onClick={() => onDifficultyChosen(Difficulty.EASY)}>Easy</Button>
-    <Button onClick={() => onDifficultyChosen(Difficulty.NORMAL)}>
-      Normal
-    </Button>
-    <Button onClick={() => onDifficultyChosen(Difficulty.HARD)}>Hard</Button>
+    {
+      !win ? <Button onClick={() => { onDifficultyChosen(Difficulty.HARD) }}>{lost ? "Play Again" : "Start Game"}</Button> : <h1 style={{ color: '#f95d5d', backgroundColor: '#222222', padding: '0.5rem', borderRadius: '0.5rem' }}>{im}</h1>
+    }
   </div>
 );

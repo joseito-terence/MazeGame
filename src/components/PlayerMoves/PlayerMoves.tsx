@@ -55,15 +55,6 @@ export const PlayerMoves = ({
   useWindowEventListener('keydown', keyDownHandler);
 
   return (
-    <div className={arrowsContainer}>
-      {movesToDisplay.map(({ key, valid }, index) => (
-        <div
-          className={`${arrowTile} ${!valid ? arrowTileInvalid : ''}`}
-          key={index}
-        >
-          {KEY_TO_SYMBOL[key]}
-        </div>
-      ))}
-    </div>
+<></>
   );
 };

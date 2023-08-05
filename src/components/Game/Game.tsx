@@ -7,13 +7,14 @@ import { Result } from '@/components/Result';
 
 interface GameProps {
   initialDifficulty: Difficulty;
+  setWin: (w: Boolean) => void
 }
 
-export const Game = ({ initialDifficulty }: GameProps) => {
+export const Game = ({ initialDifficulty, setWin }: GameProps) => {
   const { maze, generateNewMaze, solution } = useMaze(initialDifficulty);
   const [result, setResult] = useState<GameResult>();
 
-  const finishGame = useCallback((result: GameResult) => setResult(result), []);
+  const finishGame = useCallback((result: GameResult) => { setWin(true); setResult(result) }, []);
 
   const startNewGame = useCallback(
     (difficulty: Difficulty) => {
