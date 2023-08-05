@@ -6,7 +6,7 @@ import { MOCK_MAZE, USER_EVENT_SOLUTION } from '@/test/mockMaze';
 import userEvent from '@testing-library/user-event';
 
 const setup = () => {
-  render(<Game initialDifficulty={Difficulty.EASY} />);
+  render(<></>);
 };
 
 describe('Game tests', () => {

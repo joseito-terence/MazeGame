@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { Difficulty } from '@/model/enums/difficulty';
 
 const setup = (onGameStart: () => void = jest.fn()) => {
-  render(<WelcomeScreen onGameStart={onGameStart} />);
+  render(<WelcomeScreen win={false} im='' lostText={""} onGameStart={onGameStart} />);
 };
 
 describe('WelcomeScreen tests', () => {
