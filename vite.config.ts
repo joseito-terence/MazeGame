@@ -4,6 +4,7 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/MazeGame/',
   plugins: [react(), vanillaExtractPlugin()],
   build: {
     target: 'es2017',
