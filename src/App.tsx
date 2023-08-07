@@ -70,7 +70,7 @@ export const App = ({ targetTime }: appProps) => {
   }, [])
 
   const handleE = () => {
-    setsdhgg(encryptText("FLAG008"));
+    setsdhgg(encryptText("W0n8u+@wh+C05+"));
   };
 
   const handleD = () => {

@@ -7,8 +7,8 @@
     "build": "tsc && vite build",
     "serve": "vite preview",
     "test": "jest",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@vanilla-extract/css": "^1.6.3",
