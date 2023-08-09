@@ -64,6 +64,7 @@ export const App = ({ targetTime }: appProps) => {
 
   const [sdhgg, setsdhgg] = useState('');
   const [sdhgg2, setsdhgg2] = useState('');
+  const [level, setLevel] = useState(1);
 
   useEffect(() => {
     handleE();
@@ -83,12 +84,29 @@ export const App = ({ targetTime }: appProps) => {
     }
   }, [win]);
 
+  const levelHandler = () => {
+    if (level === 2) {
+      setWin(true);
+      return;
+    } 
+    setLevel(level + 1);
+    alert("Round 1 Complete! Get ready for Round 2!")
+    if (confirm("Round 2! Are you ready?")) {
+      startGame(Difficulty.HARD)
+      setIsGameInProgress(false)
+
+      setTimeout(() => {
+        setIsGameInProgress(true)
+      }, 50)
+    }
+  }
+
   return (
     <main className={mainContainer}>
       {isGameInProgress && initialDifficulty ? (
         <>
           <Countdown date={dat} renderer={renderer} />
-          <Game setWin={setWin} initialDifficulty={initialDifficulty} />
+          <Game setWin={levelHandler} initialDifficulty={initialDifficulty} />
         </>
       ) : (
         <WelcomeScreen im={sdhgg2} win={win} lostText={lost} onGameStart={startGame} />
